@@ -23,7 +23,7 @@ document.querySelector('a').addEventListener("click", loadBoard);
 function Player(name) {
 	this.name = name;
 	this.currentPlayer = false;
-};
+}
 
 	
 // Add programming, so that when the player clicks the start button the start screen disappears, the board appears, and the game begins.
@@ -42,14 +42,14 @@ function loadBoard() {
 		player1.currentPlayer = true;
 		currentPlayer = player1;
 	} else {
-		player2.currentPlayer === true;
-		currentPlayer = player2
+		player2.currentPlayer = true;
+		currentPlayer = player2;
 	}
 
-	eventHandler();
+	eventHandlers();
 
-	currentPlayerFlag()
-};
+	currentPlayerFlag();
+}
 
 
 // Let a player add their name before the game starts
@@ -66,7 +66,7 @@ function currentPlayerFlag() {
 		document.getElementById('player2').classList.add("active");
 		document.getElementById('player1').className = "players";
 	}
-};
+}
 		
 
 // When the current player mouses over an empty square on the board, it's symbol the X or O should appear on the square.
@@ -79,7 +79,7 @@ function mouseOver() {
 			this.style.backgroundImage = "url(img/x.svg)";
 		}
 	}
-};
+}
 
 
 // When mouse is moved off of empty square, get rid of X or O
@@ -92,7 +92,7 @@ function mouseOut() {
 			this.style.backgroundImage = "";
 		}
 	}
-};
+}
 
 
 // Players can only click on empty squares. When the player clicks on an empty square, attach the class box-filled-1 (for O) or box-filled-2 (for X) to the square.	
@@ -124,7 +124,7 @@ function placePiece() {
 			
 		}
 	}
-};
+}
 
 
 // The game ends when one player has three of their symbols in a row either horizontally, vertically or diagonally.
@@ -145,13 +145,13 @@ function gameState() {
 
 	//See if Player 1 has won
 	if((a1.classList.contains("box-filled-1") && a2.classList.contains("box-filled-1") && a3.classList.contains("box-filled-1")) || (b1.classList.contains("box-filled-1") && b2.classList.contains("box-filled-1") && b3.classList.contains("box-filled-1")) || (b1.classList.contains("box-filled-1") && b2.classList.contains("box-filled-1") && b3.classList.contains("box-filled-1")) || (c1.classList.contains("box-filled-1") && c2.classList.contains("box-filled-1") && c3.classList.contains("box-filled-1")) || (a1.classList.contains("box-filled-1") && b1.classList.contains("box-filled-1") && c1.classList.contains("box-filled-1")) || (a2.classList.contains("box-filled-1") && b2.classList.contains("box-filled-1") && c2.classList.contains("box-filled-1")) || (a3.classList.contains("box-filled-1") && b3.classList.contains("box-filled-1") && c3.classList.contains("box-filled-1")) || (a1.classList.contains("box-filled-1") && b2.classList.contains("box-filled-1") && c3.classList.contains("box-filled-1")) || (a3.classList.contains("box-filled-1") && b2.classList.contains("box-filled-1") && c1.classList.contains("box-filled-1"))){
-		result = "player1"
+		result = "player1";
 		return gameOver(result);
 	}
 
 	//See if Player 2 has won
 	if((a1.classList.contains("box-filled-2") && a2.classList.contains("box-filled-2") && a3.classList.contains("box-filled-2")) || (b1.classList.contains("box-filled-2") && b2.classList.contains("box-filled-2") && b3.classList.contains("box-filled-2")) || (b1.classList.contains("box-filled-2") && b2.classList.contains("box-filled-2") && b3.classList.contains("box-filled-2")) || (c1.classList.contains("box-filled-2") && c2.classList.contains("box-filled-2") && c3.classList.contains("box-filled-2")) || (a1.classList.contains("box-filled-2") && b1.classList.contains("box-filled-2") && c1.classList.contains("box-filled-2")) || (a2.classList.contains("box-filled-2") && b2.classList.contains("box-filled-2") && c2.classList.contains("box-filled-2")) || (a3.classList.contains("box-filled-2") && b3.classList.contains("box-filled-2") && c3.classList.contains("box-filled-2")) || (a1.classList.contains("box-filled-2") && b2.classList.contains("box-filled-2") && c3.classList.contains("box-filled-2")) || (a3.classList.contains("box-filled-2") && b2.classList.contains("box-filled-2") && c1.classList.contains("box-filled-2"))){
-		result = "player2"
+		result = "player2";
 		return gameOver(result);
 	}
 
@@ -161,7 +161,7 @@ function gameState() {
 		console.log("tie");
 		return gameOver(result);
 	}
-}; 
+}
 
 
 function gameOver(result) {
@@ -185,14 +185,13 @@ function gameOver(result) {
 		//New game
 		document.querySelector('a').addEventListener("click", loadBoard);
 	}
-};
+}
 		
 
 // Add programming to support playing against the computer. Only one player plays, the other is controlled by your programming.
 
 // Event Handlers
-function eventHandler() {
-
+function eventHandlers() {
 	//boxes
 	var a1 = document.getElementById('a1');
 	var a2 = document.getElementById('a2');
